@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://dajxcho6qcukt"]
+
+[ext_resource type="Script" path="res://favGame.gd" id="1_uskjh"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_he42t"]
+
+[node name="favGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uskjh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 110.0
+offset_right = 803.0
+offset_bottom = 362.0
+theme = ExtResource("2_he42t")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnShow" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 527.0
+offset_right = 268.0
+offset_bottom = 628.0
+theme = ExtResource("2_he42t")
+text = "Show"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 529.0
+offset_right = 703.0
+offset_bottom = 630.0
+theme = ExtResource("2_he42t")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 901.0
+offset_top = 532.0
+offset_right = 1129.0
+offset_bottom = 633.0
+theme = ExtResource("2_he42t")
+text = "Exit"
+
+[connection signal="pressed" from="btnShow" to="." method="_on_btn_show_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

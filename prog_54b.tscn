@@ -1,0 +1,99 @@
+[gd_scene load_steps=2 format=3 uid="uid://dci6ipp8gdb8h"]
+
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="1_ch5ir"]
+
+[node name="Prog54b" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 555.0
+offset_right = 207.0
+offset_bottom = 630.0
+theme = ExtResource("1_ch5ir")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 495.0
+offset_top = 561.0
+offset_right = 684.0
+offset_bottom = 636.0
+theme = ExtResource("1_ch5ir")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 938.0
+offset_top = 561.0
+offset_right = 1127.0
+offset_bottom = 636.0
+theme = ExtResource("1_ch5ir")
+text = "Exit"
+
+[node name="lblSum" type="Label" parent="."]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 278.0
+offset_right = 646.0
+offset_bottom = 407.0
+theme = ExtResource("1_ch5ir")
+text = "The sum of the four numbers is:"
+
+[node name="lblAvarage" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 428.0
+offset_right = 635.0
+offset_bottom = 532.0
+theme = ExtResource("1_ch5ir")
+text = "The average of the four numbers is:"
+
+[node name="lblAvarage2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = -2.0
+offset_right = 795.0
+offset_bottom = 102.0
+theme = ExtResource("1_ch5ir")
+text = "Enter in 4 3-digit numbers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="le1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 126.0
+offset_right = 261.0
+offset_bottom = 186.0
+theme = ExtResource("1_ch5ir")
+
+[node name="le2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 128.0
+offset_right = 561.0
+offset_bottom = 188.0
+theme = ExtResource("1_ch5ir")
+
+[node name="le3" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 133.0
+offset_right = 852.0
+offset_bottom = 193.0
+theme = ExtResource("1_ch5ir")
+
+[node name="le4" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 921.0
+offset_top = 140.0
+offset_right = 1109.0
+offset_bottom = 200.0
+theme = ExtResource("1_ch5ir")

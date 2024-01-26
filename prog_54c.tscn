@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnuwhv2x8p2e"]
+
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="1_hsc4s"]
+[ext_resource type="Script" path="res://prog_54c.gd" id="1_njtr0"]
+
+[node name="Prog_54c" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_njtr0")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 31.0
+offset_right = 192.0
+offset_bottom = 87.0
+theme = ExtResource("1_hsc4s")
+text = "Radious"
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 523.0
+offset_right = 237.0
+offset_bottom = 602.0
+theme = ExtResource("1_hsc4s")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 509.0
+offset_right = 679.0
+offset_bottom = 588.0
+theme = ExtResource("1_hsc4s")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 894.0
+offset_top = 509.0
+offset_right = 1095.0
+offset_bottom = 588.0
+theme = ExtResource("1_hsc4s")
+text = "Exit"
+
+[node name="L1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 199.0
+offset_top = 33.0
+offset_right = 420.0
+offset_bottom = 83.0
+theme = ExtResource("1_hsc4s")
+
+[node name="lblCirc" type="Label" parent="."]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 147.0
+offset_right = 535.0
+offset_bottom = 201.0
+theme = ExtResource("1_hsc4s")
+text = "Circumfrance is: "
+
+[node name="lblArea" type="Label" parent="."]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 214.0
+offset_right = 540.0
+offset_bottom = 268.0
+theme = ExtResource("1_hsc4s")
+text = "Area is: "
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=3 format=3 uid="uid://ilvbeyljqav0"]
+
+[ext_resource type="Script" path="res://Prog76a.gd" id="1_co87d"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_luhge"]
+
+[node name="Prog76a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 10.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_co87d")
+
+[node name="lblTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 14.0
+offset_right = 842.0
+offset_bottom = 155.0
+theme = ExtResource("2_luhge")
+text = "Enter your Least Favorite Number
+(1-9)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 268.0
+offset_right = 846.0
+offset_bottom = 503.0
+theme = ExtResource("2_luhge")
+text = ":)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 538.0
+offset_right = 214.0
+offset_bottom = 613.0
+theme = ExtResource("2_luhge")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 490.0
+offset_top = 538.0
+offset_right = 664.0
+offset_bottom = 613.0
+theme = ExtResource("2_luhge")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 538.0
+offset_right = 1087.0
+offset_bottom = 613.0
+theme = ExtResource("2_luhge")
+text = "Exit"
+
+[node name="L1" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 186.0
+offset_right = 689.0
+offset_bottom = 251.0
+theme = ExtResource("2_luhge")
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

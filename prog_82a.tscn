@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl06nkly3a14f"]
+
+[ext_resource type="Script" path="res://Prog 82a.gd" id="1_lhwm0"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_yclkq"]
+
+[node name="Prog 82a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lhwm0")
+
+[node name="lblSL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 409.0
+offset_bottom = 69.0
+theme = ExtResource("2_yclkq")
+text = "Enter The Speed Limit:"
+
+[node name="lblVS" type="Label" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 81.0
+offset_right = 415.0
+offset_bottom = 149.0
+theme = ExtResource("2_yclkq")
+text = "Enter Vehicle Speed:"
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 147.0
+offset_right = 870.0
+offset_bottom = 254.0
+theme = ExtResource("2_yclkq")
+text = "Fine: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="txtLimit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 7.0
+offset_right = 571.0
+offset_bottom = 57.0
+theme = ExtResource("2_yclkq")
+
+[node name="txtSpeed" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 85.0
+offset_right = 576.0
+offset_bottom = 135.0
+theme = ExtResource("2_yclkq")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 526.0
+offset_right = 235.0
+offset_bottom = 628.0
+theme = ExtResource("2_yclkq")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 526.0
+offset_right = 686.0
+offset_bottom = 628.0
+theme = ExtResource("2_yclkq")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 526.0
+offset_right = 1091.0
+offset_bottom = 628.0
+theme = ExtResource("2_yclkq")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

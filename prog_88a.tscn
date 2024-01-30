@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgglme26pshdc"]
+
+[ext_resource type="Script" path="res://Prog 88a.gd" id="1_3sbk4"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_yorax"]
+
+[node name="Prog 88a" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3sbk4")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 501.0
+offset_right = 320.0
+offset_bottom = 621.0
+theme = ExtResource("2_yorax")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 497.0
+offset_right = 738.0
+offset_bottom = 617.0
+theme = ExtResource("2_yorax")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 831.0
+offset_top = 493.0
+offset_right = 1131.0
+offset_bottom = 613.0
+theme = ExtResource("2_yorax")
+text = "Exit"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 22.0
+offset_right = 679.0
+offset_bottom = 73.0
+theme = ExtResource("2_yorax")
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 148.0
+offset_right = 687.0
+offset_bottom = 199.0
+theme = ExtResource("2_yorax")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 208.0
+offset_right = 1155.0
+offset_bottom = 466.0
+theme = ExtResource("2_yorax")
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

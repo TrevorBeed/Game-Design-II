@@ -1,0 +1,124 @@
+[gd_scene load_steps=3 format=3 uid="uid://dan6etxb6268g"]
+
+[ext_resource type="Script" path="res://LP4-2.gd" id="1_mjwu5"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_h6igk"]
+
+[node name="LP4-2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mjwu5")
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 564.0
+offset_right = 207.0
+offset_bottom = 634.0
+theme = ExtResource("2_h6igk")
+text = "Calculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 486.0
+offset_top = 562.0
+offset_right = 676.0
+offset_bottom = 632.0
+theme = ExtResource("2_h6igk")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 905.0
+offset_top = 558.0
+offset_right = 1095.0
+offset_bottom = 628.0
+theme = ExtResource("2_h6igk")
+text = "Exit"
+
+[node name="lblL" type="Label" parent="."]
+layout_mode = 0
+offset_right = 297.0
+offset_bottom = 129.0
+theme = ExtResource("2_h6igk")
+text = "Enter Length (cm)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblW" type="Label" parent="."]
+layout_mode = 0
+offset_left = 425.0
+offset_right = 722.0
+offset_bottom = 129.0
+theme = ExtResource("2_h6igk")
+text = "Enter Width (cm)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblWeight" type="Label" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 246.0
+offset_right = 692.0
+offset_bottom = 375.0
+theme = ExtResource("2_h6igk")
+text = "Enter Weight (kg)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblH" type="Label" parent="."]
+layout_mode = 0
+offset_left = 893.0
+offset_top = -1.0
+offset_right = 1145.0
+offset_bottom = 128.0
+theme = ExtResource("2_h6igk")
+text = "Enter Height (cm)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblOut" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 451.0
+offset_right = 1152.0
+offset_bottom = 559.0
+theme = ExtResource("2_h6igk")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="leW" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 160.0
+offset_right = 694.0
+offset_bottom = 253.0
+
+[node name="leL" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 166.0
+offset_right = 273.0
+offset_bottom = 259.0
+
+[node name="leWeight" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 363.0
+offset_right = 692.0
+offset_bottom = 456.0
+
+[node name="leH" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 162.0
+offset_right = 1113.0
+offset_bottom = 255.0
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

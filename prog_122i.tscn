@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt3eq6x5exn82"]
+
+[ext_resource type="Script" path="res://prog 122i.gd" id="1_wtr0y"]
+[ext_resource type="Theme" uid="uid://cy0vw4fea4hnt" path="res://basictheme.tres" id="2_3uygm"]
+
+[node name="prog 122i" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wtr0y")
+
+[node name="ItemList" type="ItemList" parent="."]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 443.0
+
+[node name="btnCalc" type="Button" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 559.0
+offset_right = 207.0
+offset_bottom = 628.0
+theme = ExtResource("2_3uygm")
+text = "Claculate"
+
+[node name="btnClear" type="Button" parent="."]
+layout_mode = 0
+offset_left = 469.0
+offset_top = 561.0
+offset_right = 663.0
+offset_bottom = 630.0
+theme = ExtResource("2_3uygm")
+text = "Clear"
+
+[node name="btnExit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 561.0
+offset_right = 1120.0
+offset_bottom = 630.0
+theme = ExtResource("2_3uygm")
+text = "Exit"
+
+[connection signal="pressed" from="btnCalc" to="." method="_on_btn_calc_pressed"]
+[connection signal="pressed" from="btnClear" to="." method="_on_btn_clear_pressed"]
+[connection signal="pressed" from="btnExit" to="." method="_on_btn_exit_pressed"]

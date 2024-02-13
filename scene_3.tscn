@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq4q27bho6na6"]
+[gd_scene load_steps=11 format=3 uid="uid://bq4q27bho6na6"]
 
 [ext_resource type="Script" path="res://Player3D.gd" id="1_blf5g"]
 [ext_resource type="PackedScene" uid="uid://dfb5ebhhi6b8m" path="res://models/gobot.glb" id="2_e220j"]
@@ -21,6 +21,9 @@ size = Vector2(500, 500)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7ybi"]
 albedo_color = Color(0, 0.486275, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrerw"]
+albedo_color = Color(0.466667, 0.180392, 0, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jnboy"]
 
@@ -73,6 +76,17 @@ size = Vector3(1.67435, 0.0958913, 1.83938)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.372, -550.672, 69.4744)
 use_collision = true
 size = Vector3(1.67435, 0.0958913, 1.83938)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4255, -553.15, 79.2581)
+use_collision = true
+radius = 0.201068
+height = 1.88408
+material = SubResource("StandardMaterial3D_xrerw")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1457, -551.11, 78.9737)
+radius = 1.49846
 
 [node name="Player3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0658, -545.213, 80.779)

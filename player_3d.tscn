@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://dncwnsykmicae"]
+
+[ext_resource type="Script" path="res://Player3D.gd" id="1_cdt64"]
+[ext_resource type="PackedScene" uid="uid://dfb5ebhhi6b8m" path="res://models/gobot.glb" id="2_e6xur"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jnboy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jn44d"]
+height = 2.07415
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yt1hq"]
+height = 0.272197
+radius = 0.576769
+
+[node name="Player3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8986, -522.423, 80.9436)
+script = ExtResource("1_cdt64")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0380001, 0.457825, 0.238976)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0438004)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153217, 0.015625, 0.00991821)
+visible = false
+mesh = SubResource("CapsuleMesh_jnboy")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0527954, 0)
+shape = SubResource("CapsuleShape3D_jn44d")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0.284426, 0.554199, 0.480003)
+spring_length = 6.0
+
+[node name="gobot" parent="." instance=ExtResource("2_e6xur")]
+transform = Transform3D(-1.35, 0, -1.18021e-07, 0, 1.35, 0, 1.18021e-07, 0, -1.35, 0, -1.00049, -0.0169983)
+
+[node name="feet" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0237179, -0.752014, -0.150002)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="feet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0612793, 0)
+shape = SubResource("CylinderShape3D_yt1hq")

@@ -1,7 +1,21 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq4q27bho6na6"]
+[gd_scene load_steps=26 format=3 uid="uid://bq4q27bho6na6"]
 
-[ext_resource type="Script" path="res://Player3D.gd" id="1_blf5g"]
-[ext_resource type="PackedScene" uid="uid://dfb5ebhhi6b8m" path="res://models/gobot.glb" id="2_e220j"]
+[ext_resource type="Material" uid="uid://bgw1ssu328le2" path="res://Purp.tres" id="1_0liag"]
+[ext_resource type="PackedScene" uid="uid://d0bbxfd80pg37" path="res://playerhud_3d.tscn" id="1_4f3we"]
+[ext_resource type="PackedScene" uid="uid://dv5ufshqda57o" path="res://goal.tscn" id="1_etler"]
+[ext_resource type="Resource" path="res://terrain/data.hterrain" id="2_wpgdi"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="4_cmm8k"]
+[ext_resource type="Texture2D" uid="uid://cc3hb2bucmm0m" path="res://terrain/textures/Rock007_1K-JPG/Rock007_1K-JPG_Color.jpg" id="4_icb8t"]
+[ext_resource type="Texture2D" uid="uid://4x4285l3mr5r" path="res://terrain/textures/Ground068_1K-JPG/Ground068_1K-JPG_Color.jpg" id="4_scx1w"]
+[ext_resource type="Texture2D" uid="uid://h7xcvmi2vijs" path="res://terrain/textures/Planks033B_1K-JPG/Planks033B_1K-JPG_Color.jpg" id="5_m5eek"]
+[ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="5_siqf1"]
+[ext_resource type="Texture2D" uid="uid://ccjc1xt88nlss" path="res://terrain/textures/Wood066_1K-JPG/Wood066_1K-JPG_Color.jpg" id="6_nrb1j"]
+[ext_resource type="Texture2D" uid="uid://ctfg0j8x7iuf3" path="res://terrain/textures/Ground068_1K-JPG/Ground068_1K-JPG_NormalGL.jpg" id="7_w7dj6"]
+[ext_resource type="Texture2D" uid="uid://hbvcfthupde4" path="res://terrain/textures/Rock007_1K-JPG/Rock007_1K-JPG_NormalGL.jpg" id="8_a18ot"]
+[ext_resource type="Texture2D" uid="uid://rcpciyy6ecsw" path="res://terrain/textures/Planks033B_1K-JPG/Planks033B_1K-JPG_NormalGL.jpg" id="8_xtalh"]
+[ext_resource type="Texture2D" uid="uid://cx0ejoipkyo8b" path="res://terrain/textures/Wood066_1K-JPG/Wood066_1K-JPG_NormalGL.jpg" id="9_bxtyj"]
+[ext_resource type="PackedScene" uid="uid://dncwnsykmicae" path="res://player_3d.tscn" id="13_hwy56"]
+[ext_resource type="PackedScene" uid="uid://b24w8a8hwio7k" path="res://enemy_3d.tscn" id="14_ivm8u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g6u5d"]
 sky_top_color = Color(0.490196, 0.698039, 1, 1)
@@ -16,6 +30,11 @@ background_mode = 2
 sky = SubResource("Sky_lx1yp")
 tonemap_mode = 2
 
+[sub_resource type="Resource" id="Resource_dm268"]
+script = ExtResource("5_siqf1")
+mode = 0
+textures = [[ExtResource("4_icb8t"), ExtResource("4_scx1w"), ExtResource("5_m5eek"), ExtResource("6_nrb1j")], [ExtResource("8_a18ot"), ExtResource("7_w7dj6"), ExtResource("8_xtalh"), ExtResource("9_bxtyj")]]
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_vviwp"]
 size = Vector2(500, 500)
 
@@ -25,92 +44,176 @@ albedo_color = Color(0, 0.486275, 0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrerw"]
 albedo_color = Color(0.466667, 0.180392, 0, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_jnboy"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y152a"]
+albedo_color = Color(0.164706, 0.478431, 0, 1)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jn44d"]
-height = 2.07415
+[sub_resource type="NavigationMesh" id="NavigationMesh_0l8er"]
+agent_height = 2.0
 
-[node name="scene 3" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 537.424, -76)
+[node name="scene 3D" type="Node3D"]
+
+[node name="Goal" parent="." instance=ExtResource("1_etler")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.9477, 4.31671, 86.4094)
+next_level = "scene_3d_2"
+
+[node name="Playerhud3d" parent="." instance=ExtResource("1_4f3we")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1brl7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.998537, -0.0161718, 0.0516042, 0, 0.95424, 0.299041, -0.0540788, 0.298603, -0.952844, 0, 0, 0)
+transform = Transform3D(-0.998537, -0.0161718, 0.0516042, 0, 0.95424, 0.299041, -0.0540788, 0.298603, -0.952844, -7.16719, 22.7191, 0.164558)
 light_color = Color(1, 0.862745, 0.352941, 1)
 shadow_enabled = true
 
+[node name="HTerrain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -261.155, 0, -240.886)
+script = ExtResource("4_cmm8k")
+_terrain_data = ExtResource("2_wpgdi")
+chunk_size = 32
+collision_enabled = true
+collision_layer = 1
+collision_mask = 1
+shader_type = "Classic4Lite"
+custom_shader = null
+custom_globalmap_shader = null
+texture_set = SubResource("Resource_dm268")
+render_layers = 1
+cast_shadow = 1
+shader_params/u_ground_uv_scale = 20
+shader_params/u_depth_blending = true
+shader_params/u_triplanar = null
+shader_params/u_tile_reduction = null
+
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -554.112, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.16719, 0.309097, 0.164558)
+visible = false
 use_collision = true
 mesh = SubResource("PlaneMesh_vviwp")
 material = SubResource("StandardMaterial3D_y7ybi")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.232, -553.061, 76.1162)
+[node name="Box" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.0648, 1.36012, 76.2808)
 use_collision = true
 size = Vector3(3.30976, 0.0958913, 1.93201)
+material = ExtResource("1_0liag")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3351, -551.98, 72.0772)
+[node name="Box2" type="CSGBox3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1031, 1.081, -4.039)
 use_collision = true
 size = Vector3(3.90941, 0.0958913, 1.83938)
+material = ExtResource("1_0liag")
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.3351, -551.403, 66.973)
+[node name="Box3" type="CSGBox3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1031, 1.65796, -9.1432)
 use_collision = true
 size = Vector3(3.90941, 0.0958913, 1.83938)
+material = ExtResource("1_0liag")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0209, -551.015, 66.4326)
+[node name="Box4" type="CSGBox3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7889, 2.04596, -9.6836)
 use_collision = true
 size = Vector3(1.67435, 0.0958913, 1.83938)
+material = ExtResource("1_0liag")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.5532, -551.015, 66.4326)
+[node name="Box5" type="CSGBox3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3212, 2.04596, -9.6836)
 use_collision = true
 size = Vector3(1.67435, 0.0958913, 1.83938)
+material = ExtResource("1_0liag")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.372, -550.672, 69.4744)
+[node name="Box6" type="CSGBox3D" parent="Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.023, 2.38898, -6.6418)
 use_collision = true
 size = Vector3(1.67435, 0.0958913, 1.83938)
+material = ExtResource("1_0liag")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.4255, -553.15, 79.2581)
+[node name="Tree (stump)1" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7941, 1.51308, 70.8904)
 use_collision = true
 radius = 0.201068
-height = 1.88408
+height = 2.37471
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1457, -551.11, 78.9737)
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.15735, 0.0105705)
+use_collision = true
 radius = 1.49846
+material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Player3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.0658, -545.213, 80.779)
-script = ExtResource("1_blf5g")
+[node name="Tree (stump)2" type="CSGCylinder3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9397, -0.24201, 4.7923)
+use_collision = true
+radius = 0.201068
+height = 2.37471
+material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Head" type="Node3D" parent="Player3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0381392, -6.33206, 0.425992)
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.15735, -0.0412254)
+use_collision = true
+radius = 1.49846
+material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Camera3D" type="Camera3D" parent="Player3D/Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0142689, 0)
+[node name="Tree (stump)3" type="CSGCylinder3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9876, -0.24201, 10.3536)
+use_collision = true
+radius = 0.201068
+height = 3.58064
+material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.83093, 0)
-visible = false
-mesh = SubResource("CapsuleMesh_jnboy")
-skeleton = NodePath("../..")
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.79123, -0.0412254)
+use_collision = true
+radius = 1.49846
+material = SubResource("StandardMaterial3D_y152a")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.8384, 0)
-shape = SubResource("CapsuleShape3D_jn44d")
+[node name="Tree (stump)4" type="CSGCylinder3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1751, -0.24201, 14.4034)
+use_collision = true
+radius = 0.201068
+height = 3.58064
+material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="Player3D"]
-transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0, -5.8183, 0.19923)
-spring_length = 6.0
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.79123, -0.0412254)
+use_collision = true
+radius = 1.49846
+material = SubResource("StandardMaterial3D_y152a")
 
-[node name="gobot" parent="Player3D" instance=ExtResource("2_e220j")]
-transform = Transform3D(-1.35, 0, -1.18021e-07, 0, 1.35, 0, 1.18021e-07, 0, -1.35, 0, -7.86642, -0.0172057)
+[node name="Tree (stump)5" type="CSGCylinder3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4175, -0.24201, 15.9447)
+use_collision = true
+radius = 0.201068
+height = 5.48013
+material = SubResource("StandardMaterial3D_xrerw")
+
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032629, 3.52271, -0.142241)
+use_collision = true
+radius = 1.49846
+material = SubResource("StandardMaterial3D_y152a")
+
+[node name="Tree (stump)6" type="CSGCylinder3D" parent="Tree (stump)1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5844, -0.24201, 15.9447)
+use_collision = true
+radius = 0.201068
+height = 7.57525
+material = SubResource("StandardMaterial3D_xrerw")
+
+[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032629, 4.48882, -0.0377855)
+use_collision = true
+radius = 2.09592
+material = SubResource("StandardMaterial3D_y152a")
+
+[node name="Player3D" parent="." groups=["Player"] instance=ExtResource("13_hwy56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.899, 1.63752, 80.944)
+
+[node name="Enemy3D" parent="." instance=ExtResource("14_ivm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4366, 1.04645, 77.7199)
+
+[node name="Enemy3D2" parent="Enemy3D" instance=ExtResource("14_ivm8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7482, -0.0104477, 5.79087)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_0l8er")

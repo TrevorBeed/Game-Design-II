@@ -4,7 +4,7 @@ const WALK_SPEED = 5.0
 const SPRINT_SPEED  = 8.5
 var SPEED = WALK_SPEED
 
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 7.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,6 +23,15 @@ var FOV_CHANGE = 1.0
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
+
+var MAX_HEALTH = 50
+var HEALTH = MAX_HEALTH
+var damage_lock = 0.0
+var inertia = Vector3.ZERO
+
+var dmg_shader = preload("res://assets/shaders/take_damage.tres")
+@onready var HUD = get_tree().get_first_node_in_group("HUD")
+
 
 
 func _physics_process(delta):
@@ -80,8 +89,32 @@ func _physics_process(delta):
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = headbob(t_bob)
 	
+	for enemy in get_tree().get_nodes_in_group("Enemy"):
+		if $feet.overlaps_area(enemy.dmg_area):
+			enemy.queue_free()
+	damage_lock = max(damage_lock-delta, 0.0)
+	velocity += inertia
+	inertia = inertia.move_toward(Vector3(), delta*1000.0)
+	
+	if damage_lock == 0.0:
+		HUD.dmg_overlay.material = null
+	HUD.healthbar.max_value = MAX_HEALTH
+	HUD.healthbar.value = int(HEALTH)
+	
 	move_and_slide()
 	
+func take_damage(dmg):
+	if damage_lock == 0.0:
+		damage_lock = 0.5
+		HEALTH -= dmg
+		var dmg_intensity = clamp(1.0 - ((HEALTH + 0.01)/MAX_HEALTH), 0.1, 0.8)
+		HUD.dmg_overlay.material = dmg_shader.duplicate()
+		HUD.dmg_overlay.material.set_shader_parameter("intensity", dmg_intensity)
+	if HEALTH <= 0:
+		await  get_tree().create_timer(0.25).timeout
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		OS.alert("YOU DIED")
+		get_tree().reload_current_scene()
 	
 func headbob(time):
 	var pos = Vector3.ZERO

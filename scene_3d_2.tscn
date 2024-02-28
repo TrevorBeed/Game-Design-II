@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci6jrqaavb4mg"]
+[gd_scene load_steps=17 format=3 uid="uid://ci6jrqaavb4mg"]
 
 [ext_resource type="PackedScene" uid="uid://d0bbxfd80pg37" path="res://playerhud_3d.tscn" id="1_1wvor"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="2_pemf7"]
@@ -29,6 +29,9 @@ tonemap_mode = 2
 script = ExtResource("4_wt00r")
 mode = 0
 textures = [[ExtResource("5_a4wqx"), ExtResource("6_y547j")], [ExtResource("6_g08cj"), ExtResource("8_hno4r")]]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etb2a"]
+albedo_color = Color(0, 0.415686, 0, 1)
 
 [node name="scene3D2" type="Node3D"]
 
@@ -63,10 +66,22 @@ shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
 [node name="Player3D" parent="." instance=ExtResource("5_o0no2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.12581, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31929, 0)
 
 [node name="Goal" parent="." instance=ExtResource("6_hedlk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2394, 6.3664, 0)
 
 [node name="Enemy3D" parent="." instance=ExtResource("7_k8glg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4515, 3.55422, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85726, 1.08656, 0)
+
+[node name="Leaf" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01152, 0.805426, 0)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.54323, 3.23817, -0.740283)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")

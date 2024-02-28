@@ -53,7 +53,8 @@ agent_height = 2.0
 [node name="scene 3D" type="Node3D"]
 
 [node name="Goal" parent="." instance=ExtResource("1_etler")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.9477, 4.31671, 86.4094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.0771, 10.7067, 86.4218)
+visible = false
 next_level = "scene_3d_2"
 
 [node name="Playerhud3d" parent="." instance=ExtResource("1_4f3we")]
@@ -122,88 +123,95 @@ use_collision = true
 size = Vector3(1.67435, 0.0958913, 1.83938)
 material = ExtResource("1_0liag")
 
-[node name="Box6" type="CSGBox3D" parent="Box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.023, 2.38898, -6.6418)
-use_collision = true
-size = Vector3(1.67435, 0.0958913, 1.83938)
-material = ExtResource("1_0liag")
-
-[node name="Tree (stump)1" type="CSGCylinder3D" parent="."]
+[node name="Tree1" type="CSGCylinder3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7941, 1.51308, 70.8904)
 use_collision = true
 radius = 0.201068
 height = 2.37471
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1"]
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.15735, 0.0105705)
 use_collision = true
 radius = 1.49846
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Tree (stump)2" type="CSGCylinder3D" parent="Tree (stump)1"]
+[node name="Tree2" type="CSGCylinder3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9397, -0.24201, 4.7923)
 use_collision = true
 radius = 0.201068
 height = 2.37471
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)2"]
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.15735, -0.0412254)
 use_collision = true
 radius = 1.49846
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Tree (stump)3" type="CSGCylinder3D" parent="Tree (stump)1"]
+[node name="Tree3" type="CSGCylinder3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.9876, -0.24201, 10.3536)
 use_collision = true
 radius = 0.201068
 height = 3.58064
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)3"]
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.79123, -0.0412254)
 use_collision = true
 radius = 1.49846
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Tree (stump)4" type="CSGCylinder3D" parent="Tree (stump)1"]
+[node name="Tree4" type="CSGCylinder3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1751, -0.24201, 14.4034)
 use_collision = true
 radius = 0.201068
 height = 3.58064
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)4"]
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0264015, 2.79123, -0.0412254)
 use_collision = true
 radius = 1.49846
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Tree (stump)5" type="CSGCylinder3D" parent="Tree (stump)1"]
+[node name="Tree5" type="CSGCylinder3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4175, -0.24201, 15.9447)
 use_collision = true
 radius = 0.201068
 height = 5.48013
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032629, 3.52271, -0.142241)
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0326271, 3.52271, -0.142242)
 use_collision = true
 radius = 1.49846
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Tree (stump)6" type="CSGCylinder3D" parent="Tree (stump)1"]
+[node name="Tree6" type="CSGCylinder3D" parent="Tree1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5844, -0.24201, 15.9447)
 use_collision = true
 radius = 0.201068
 height = 7.57525
 material = SubResource("StandardMaterial3D_xrerw")
 
-[node name="Tree leaves" type="CSGSphere3D" parent="Tree (stump)1/Tree (stump)6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032629, 4.48882, -0.0377855)
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0326271, 4.48882, -0.0377884)
 use_collision = true
 radius = 2.09592
+material = SubResource("StandardMaterial3D_y152a")
+
+[node name="Tree7" type="CSGCylinder3D" parent="Tree1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.239, -0.24201, 15.9105)
+use_collision = true
+radius = 0.592347
+height = 16.0732
+material = SubResource("StandardMaterial3D_xrerw")
+
+[node name="TreeLeaves" type="CSGSphere3D" parent="Tree1/Tree7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164593, 8.37461, -0.0439377)
+use_collision = true
+radius = 3.89597
 material = SubResource("StandardMaterial3D_y152a")
 
 [node name="Player3D" parent="." groups=["Player"] instance=ExtResource("13_hwy56")]

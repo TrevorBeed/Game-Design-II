@@ -69,19 +69,50 @@ shader_params/u_tile_reduction = null
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31929, 0)
 
 [node name="Goal" parent="." instance=ExtResource("6_hedlk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.2394, 6.3664, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7914, 13.3811, 4.26206)
+next_level = "scene_3d_3"
 
 [node name="Enemy3D" parent="." instance=ExtResource("7_k8glg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85726, 1.08656, 0)
 
 [node name="Leaf" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01152, 0.805426, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73234, 2.52626, 0)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
 [node name="Leaf2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.54323, 3.23817, -0.740283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63389, 4.97432, -0.740283)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0657, 6.96862, -0.740283)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0657, 8.39898, 4.64191)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.39681, 9.32304, 4.64191)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23572, 9.32304, 4.64191)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00715, 10.7074, 4.64191)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")

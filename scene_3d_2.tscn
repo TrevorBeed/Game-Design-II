@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ci6jrqaavb4mg"]
+[gd_scene load_steps=24 format=3 uid="uid://ci6jrqaavb4mg"]
 
 [ext_resource type="PackedScene" uid="uid://d0bbxfd80pg37" path="res://playerhud_3d.tscn" id="1_1wvor"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="2_pemf7"]
@@ -10,7 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dv5ufshqda57o" path="res://goal.tscn" id="6_hedlk"]
 [ext_resource type="Texture2D" uid="uid://b4idx2rlqmt0b" path="res://scene_3d_2_slot1_albedo_bump.png" id="6_y547j"]
 [ext_resource type="PackedScene" uid="uid://b24w8a8hwio7k" path="res://enemy_3d.tscn" id="7_k8glg"]
+[ext_resource type="Texture2D" uid="uid://dp5xbdco8veyp" path="res://terrain/textures/Grass001_1K-JPG/Grass001_1K-JPG_Color.jpg" id="7_puu6o"]
 [ext_resource type="Texture2D" uid="uid://b3alern6mfm6c" path="res://scene_3d_2_slot1_normal_roughness.png" id="8_hno4r"]
+[ext_resource type="Texture2D" uid="uid://b10leunmrrppi" path="res://terrain/textures/Grass001_1K-JPG/Grass001_1K-JPG_NormalGL.jpg" id="10_d48rp"]
+[ext_resource type="PackedScene" uid="uid://cru3di53ebo8o" path="res://pushable.tscn" id="14_ytvxd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_81ghf"]
 sky_top_color = Color(0.0745098, 0.490196, 1, 1)
@@ -28,23 +31,40 @@ tonemap_mode = 2
 [sub_resource type="Resource" id="Resource_dnesp"]
 script = ExtResource("4_wt00r")
 mode = 0
-textures = [[ExtResource("5_a4wqx"), ExtResource("6_y547j")], [ExtResource("6_g08cj"), ExtResource("8_hno4r")]]
+textures = [[ExtResource("5_a4wqx"), ExtResource("6_y547j"), ExtResource("7_puu6o")], [ExtResource("6_g08cj"), ExtResource("8_hno4r"), ExtResource("10_d48rp")]]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_grfcr"]
+albedo_color = Color(0.466667, 0.180392, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rw6be"]
+albedo_color = Color(0, 0.415686, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_etb2a"]
 albedo_color = Color(0, 0.415686, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjp6d"]
+albedo_color = Color(0, 0.415686, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwvqv"]
+albedo_color = Color(0, 0, 0, 1)
+
 [node name="scene3D2" type="Node3D"]
 
-[node name="Playerhud3d" parent="." instance=ExtResource("1_1wvor")]
+[node name="Goal" parent="." instance=ExtResource("6_hedlk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7898, 21.0393, -23.7782)
+visible = false
+next_level = "scene_3d_3"
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ukp4q")
+[node name="Playerhud3d" parent="." instance=ExtResource("1_1wvor")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.14952, 0.47712, 0, 0.95424, 0.299041, -0.5, 0.258977, -0.826396, 0, 0, 0)
 light_color = Color(1, 0.678431, 0.352941, 1)
 light_energy = 2.05
 shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ukp4q")
 
 [node name="HTerrain" type="Node3D" parent="."]
 script = ExtResource("2_pemf7")
@@ -65,54 +85,87 @@ shader_params/u_depth_blending = true
 shader_params/u_triplanar = null
 shader_params/u_tile_reduction = null
 
-[node name="Player3D" parent="." instance=ExtResource("5_o0no2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31929, 0)
-
-[node name="Goal" parent="." instance=ExtResource("6_hedlk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.7914, 13.3811, 4.26206)
-next_level = "scene_3d_3"
-
 [node name="Enemy3D" parent="." instance=ExtResource("7_k8glg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85726, 1.08656, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8293, 1.08656, 0)
+
+[node name="Branch" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.3542, 5.69796, -1.53427)
+use_collision = true
+size = Vector3(4.18596, 9.2251, 3.9601)
+material = SubResource("StandardMaterial3D_grfcr")
 
 [node name="Leaf" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.73234, 2.52626, 0)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
-material = SubResource("StandardMaterial3D_etb2a")
+material = SubResource("StandardMaterial3D_rw6be")
 
-[node name="Leaf2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.63389, 4.97432, -0.740283)
+[node name="Leaf2" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90155, 2.44806, -0.740283)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
-[node name="Leaf3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0657, 6.96862, -0.740283)
+[node name="Leaf3" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.33336, 4.44236, -0.740283)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
-[node name="Leaf4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0657, 8.39898, 4.64191)
+[node name="Leaf4" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.33336, 5.87272, 4.64191)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
-[node name="Leaf5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.39681, 9.32304, 4.64191)
+[node name="Leaf5" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66447, 6.79678, 4.64191)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
-[node name="Leaf6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23572, 9.32304, 4.64191)
+[node name="Leaf6" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.96806, 6.79678, 4.64191)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
 
-[node name="Leaf7" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.00715, 10.7074, 4.64191)
+[node name="Leaf7" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7395, 8.18114, 4.64191)
 use_collision = true
 size = Vector3(1.53893, 0.267449, 1.7699)
 material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf8" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0774, 13.1952, -0.96969)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="Leaf9" type="CSGBox3D" parent="Leaf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6544, 14.2483, -7.52829)
+use_collision = true
+size = Vector3(1.53893, 0.267449, 1.7699)
+material = SubResource("StandardMaterial3D_etb2a")
+
+[node name="BigLeaf" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5642, 10.4988, 0.510802)
+use_collision = true
+size = Vector3(11.3236, 1, 9.85009)
+material = SubResource("StandardMaterial3D_kjp6d")
+
+[node name="Pushable" parent="." instance=ExtResource("14_ytvxd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.4572, 12.4282, -1.39552)
+mass = 1.5
+
+[node name="Player3D" parent="." instance=ExtResource("5_o0no2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67089, 1.601, -7.07189)
+
+[node name="Enemy3D2" parent="." instance=ExtResource("7_k8glg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.4259, 12.5579, 0)
+
+[node name="FPlatform" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0608, 15.5749, -24.3539)
+use_collision = true
+size = Vector3(4.78921, 0.735465, 14.451)
+material = SubResource("StandardMaterial3D_nwvqv")

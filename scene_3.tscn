@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bq4q27bho6na6"]
+[gd_scene load_steps=28 format=3 uid="uid://bq4q27bho6na6"]
 
 [ext_resource type="Material" uid="uid://bgw1ssu328le2" path="res://Purp.tres" id="1_0liag"]
 [ext_resource type="PackedScene" uid="uid://d0bbxfd80pg37" path="res://playerhud_3d.tscn" id="1_4f3we"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cx0ejoipkyo8b" path="res://terrain/textures/Wood066_1K-JPG/Wood066_1K-JPG_NormalGL.jpg" id="9_bxtyj"]
 [ext_resource type="PackedScene" uid="uid://dncwnsykmicae" path="res://player_3d.tscn" id="13_hwy56"]
 [ext_resource type="PackedScene" uid="uid://b24w8a8hwio7k" path="res://enemy_3d.tscn" id="14_ivm8u"]
+[ext_resource type="PackedScene" uid="uid://cru3di53ebo8o" path="res://pushable.tscn" id="17_ijud8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g6u5d"]
 sky_top_color = Color(0.490196, 0.698039, 1, 1)
@@ -49,6 +50,8 @@ albedo_color = Color(0.164706, 0.478431, 0, 1)
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_0l8er"]
 agent_height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ymgcd"]
 
 [node name="scene 3D" type="Node3D"]
 
@@ -214,7 +217,7 @@ use_collision = true
 radius = 3.89597
 material = SubResource("StandardMaterial3D_y152a")
 
-[node name="Player3D" parent="." groups=["Player"] instance=ExtResource("13_hwy56")]
+[node name="Player3D" parent="." instance=ExtResource("13_hwy56")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.899, 1.63752, 80.944)
 
 [node name="Enemy3D" parent="." instance=ExtResource("14_ivm8u")]
@@ -225,3 +228,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.7482, -0.0104477, 5.79087)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_0l8er")
+
+[node name="KickBall" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6951, 3.17126, 61.5461)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="KickBall"]
+use_collision = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KickBall"]
+shape = SubResource("SphereShape3D_ymgcd")
+
+[node name="Pushable" parent="." instance=ExtResource("17_ijud8")]

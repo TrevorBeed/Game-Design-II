@@ -6,6 +6,8 @@ var SPEED = WALK_SPEED
 
 const JUMP_VELOCITY = 7.0
 
+var PUSH_FORCE = 25.0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var CAM_SENSITIVITY = 0.03
@@ -103,6 +105,15 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	for i in range(get_slide_collision_count()):
+		var c = get_slide_collision(i)
+		var col = c.get_collider()
+		if col is RigidBody3D and is_on_floor():
+			col.apply_central_force(-c.get_normal() * PUSH_FORCE)
+	
+	if self.global_position.y <= -50:
+		take_damage(MAX_HEALTH)
+			
 func take_damage(dmg):
 	if damage_lock == 0.0:
 		damage_lock = 0.5

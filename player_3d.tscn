@@ -12,7 +12,7 @@ height = 2.07415
 height = 0.272197
 radius = 0.576769
 
-[node name="Player3D" type="CharacterBody3D"]
+[node name="Player3D" type="CharacterBody3D" groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8986, -522.423, 80.9436)
 script = ExtResource("1_cdt64")
 

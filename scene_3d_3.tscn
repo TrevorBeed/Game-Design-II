@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain.gd" id="2_u3hnn"]
 [ext_resource type="Resource" path="res://terrain/map 3/data.hterrain" id="3_4u7fl"]
 [ext_resource type="Script" path="res://addons/zylann.hterrain/hterrain_texture_set.gd" id="4_hty32"]
-[ext_resource type="Texture2D" uid="uid://c6fluup8cfnmr" path="res://scene_3d_3_slot0_albedo_bump.png" id="5_7h0wi"]
+[ext_resource type="Texture2D" uid="uid://c52sqckq0rne2" path="res://scene_3d_3_slot0_albedo_bump.png" id="5_7h0wi"]
 [ext_resource type="PackedScene" uid="uid://dncwnsykmicae" path="res://player_3d.tscn" id="5_kc5nv"]
 [ext_resource type="Texture2D" uid="uid://bm8im056v315h" path="res://scene_3d_3_slot0_normal_roughness.png" id="6_fa7hu"]
 [ext_resource type="PackedScene" uid="uid://b24w8a8hwio7k" path="res://enemy_3d.tscn" id="7_jj02v"]

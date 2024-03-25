@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://6gau16rekixy"]
+
+[ext_resource type="PackedScene" uid="uid://3ic2ofeflh8b" path="res://assets/maps/de_dust_2_with_real_light.tscn" id="1_awfoc"]
+[ext_resource type="PackedScene" uid="uid://birt61nqja7ce" path="res://fps_player_template.tscn" id="2_vba7x"]
+[ext_resource type="PackedScene" uid="uid://de7ro4edke05u" path="res://fps_enemy_template.tscn" id="3_7r2j4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w4052"]
+sky_top_color = Color(0.505882, 0.752941, 0.878431, 1)
+sky_horizon_color = Color(0.626471, 0.688235, 0.719608, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.626471, 0.688235, 0.719608, 1)
+
+[sub_resource type="Sky" id="Sky_0utx8"]
+sky_material = SubResource("ProceduralSkyMaterial_w4052")
+
+[sub_resource type="Environment" id="Environment_fpa4t"]
+background_mode = 2
+sky = SubResource("Sky_0utx8")
+tonemap_mode = 2
+
+[node name="fps_world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.149521, 0.477123, 0, 0.95424, 0.299041, -0.500003, 0.258976, -0.826395, 0, 0, 0)
+light_color = Color(0.913725, 0.968627, 0, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fpa4t")
+
+[node name="de_dust_2_with_real_light" parent="." instance=ExtResource("1_awfoc")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+
+[node name="fps_player" parent="." instance=ExtResource("2_vba7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1416, 1.0297, 0)
+
+[node name="fps_enemy" parent="." instance=ExtResource("3_7r2j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49758, 1.04471, 0.531815)

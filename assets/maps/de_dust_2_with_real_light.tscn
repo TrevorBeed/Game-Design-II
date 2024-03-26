@@ -474,7 +474,6 @@ navigation_mesh = SubResource("NavigationMesh_xytno")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part11_part11_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part11"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_m02xo")
 skeleton = NodePath("")
 
@@ -490,7 +489,6 @@ shape = SubResource("ConcavePolygonShape3D_n7fjb")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part1_part1_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_pu13r")
 skeleton = NodePath("")
 
@@ -503,7 +501,6 @@ shape = SubResource("ConcavePolygonShape3D_i4e3u")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part2_part2_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jdloy")
 skeleton = NodePath("")
 
@@ -516,7 +513,6 @@ shape = SubResource("ConcavePolygonShape3D_2hcn1")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part3_part3_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_wc1wn")
 skeleton = NodePath("")
 
@@ -529,7 +525,6 @@ shape = SubResource("ConcavePolygonShape3D_wyur5")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part4_part4_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8fynk")
 skeleton = NodePath("")
 
@@ -542,7 +537,6 @@ shape = SubResource("ConcavePolygonShape3D_jeyiv")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part5_part5_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_s3jbb")
 skeleton = NodePath("")
 
@@ -555,7 +549,6 @@ shape = SubResource("ConcavePolygonShape3D_jo8kd")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part6_part6_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_5j5ux")
 skeleton = NodePath("")
 
@@ -568,7 +561,6 @@ shape = SubResource("ConcavePolygonShape3D_xpwlp")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part7_part7_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qgm2d")
 skeleton = NodePath("")
 
@@ -581,7 +573,6 @@ shape = SubResource("ConcavePolygonShape3D_ug8tt")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part8_part8_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_wkfv2")
 skeleton = NodePath("")
 
@@ -594,7 +585,6 @@ shape = SubResource("ConcavePolygonShape3D_mar0n")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part9_part9_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_numiv")
 skeleton = NodePath("")
 
@@ -607,7 +597,6 @@ shape = SubResource("ConcavePolygonShape3D_wddhf")
 transform = Transform3D(0.393701, 0, 0, 0, 8.74192e-17, 0.393701, 0, -0.393701, 8.74192e-17, 0, 0, 0)
 
 [node name="part10_part10_0" type="MeshInstance3D" parent="Sketchfab_model/eaf6f3c9fcd946a5959a413033a2ae7b_fbx/RootNode/part10"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_vvqbt")
 skeleton = NodePath("")
 

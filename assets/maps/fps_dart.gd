@@ -1,6 +1,5 @@
 extends RigidBody3D
 
-
 var ATTACK = 5
 var ATTACK_CRIT = 2 * ATTACK
 var SPEED = 50
@@ -14,7 +13,7 @@ func _ready():
 
 func _on_timer_timeout():
 	queue_free()
-	
+
 func _physics_process(delta):
 	linear_velocity.y -= gravity * delta
 	do_damage("Player")
@@ -22,23 +21,20 @@ func _physics_process(delta):
 
 func do_damage(group):
 	var crit = max(0, randf_range(-ATTACK_CRIT, ATTACK_CRIT))
-	for entity in  get_tree().get_nodes_in_group(group):
+	for entity in get_tree().get_nodes_in_group(group):
 		if entity != get_parent():
 			if $Area3D.overlaps_area(entity.head):
 				entity.take_damage(ATTACK*2.5 + crit, true, true, spawn_origin)
-			if $Area3D.overlaps_area(entity):
+			if $Area3D.overlaps_body(entity):
 				entity.take_damage(ATTACK + crit, true, false, spawn_origin)
 
-func do_fire(camera, muzzle, spray_ammount, attack=ATTACK):
+func do_fire(camera, muzzle, spray_amount, attack=ATTACK):
 	ATTACK = attack
 	ATTACK_CRIT = 2*ATTACK
-	var cam_foward = camera.global_transform.basis.z.normalized()
-	var rnd_x = randf_range(-1, 1) * spray_ammount
-	var rnd_y = randf_range(-1, 1) * spray_ammount
-	var spray_dir = cam_foward + camera.global_transform.basis.x * rnd_x + \
-								camera.global_transform.basis.y * rnd_y
+	var cam_forward = camera.global_transform.basis.z.normalized()
+	var rnd_x = randf_range(-1, 1) * spray_amount
+	var rnd_y = randf_range(-1, 1) * spray_amount
+	var spray_dir = cam_forward + camera.global_transform.basis.x * rnd_x + \
+								  camera.global_transform.basis.y * rnd_y
 	self.global_transform.origin = muzzle.global_transform.origin
 	self.linear_velocity = -spray_dir.normalized() * SPEED
-	
-	
-	

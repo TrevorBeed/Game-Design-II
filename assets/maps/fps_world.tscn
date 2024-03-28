@@ -32,7 +32,16 @@ environment = SubResource("Environment_fpa4t")
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="fps_player" parent="." instance=ExtResource("2_vba7x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1416, 1.0297, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2877, 1.0297, 0)
 
 [node name="fps_enemy" parent="." instance=ExtResource("3_7r2j4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.49758, 1.04471, 0.531815)
+transform = Transform3D(-0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, -12.1647, 1.16754, -11.6123)
+
+[node name="fps_enemy2" parent="." instance=ExtResource("3_7r2j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4861, -2.5505, -65.1746)
+
+[node name="fps_enemy3" parent="." instance=ExtResource("3_7r2j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8976, 0.84747, -64.6945)
+
+[node name="fps_enemy4" parent="." instance=ExtResource("3_7r2j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.211, 2.00181, -35.0669)

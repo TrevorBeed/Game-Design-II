@@ -115,3 +115,5 @@ offset_right = 205.0
 offset_bottom = 47.0
 text = "0/0"
 label_settings = SubResource("LabelSettings_paux6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

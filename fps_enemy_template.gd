@@ -20,16 +20,33 @@ var SPRAY_AMOUNT = 0.08
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * 1.5
 
+@onready var audio_player = $AudioStreamPlayer3D
+var hit_sound = preload("res://assets/sounds/hitHurt.wav")
+var dink_sound = preload("res://assets/sounds/hitHead.wav")
+
+func is_player_in_sight(player):
+	var from_pos = self.global_transform.origin
+	var to_pos = player.global_transform.origin
+	var direction = to_pos - from_pos
+	var distance = direction.length()
+	
+	var ray_query = PhysicsRayQueryParameters3D.new()
+	ray_query.from = from_pos
+	ray_query.to = from_pos + direction.normalized() * distance
+	ray_query.exclude = [get_rid()]
+	
+	var result = get_world_3d().direct_space_state.intersect_ray(ray_query)
+	return result.size() != 0 and result.collider == player
 
 func _physics_process(delta):
 	for player in get_tree().get_nodes_in_group("Player"):
-		if $AttackRange.overlaps_body(player):  # TODO: player in sight
+		if $AttackRange.overlaps_body(player) or is_player_in_sight(player):
 			nav_agent.target_position = player.global_position
 			$HuntTimer.start()
-			if spray_lock == 0: #and player in sight
+			if spray_lock == 0 and is_player_in_sight(player):
 				var dart = dart_scene.instantiate()
 				add_child(dart)
-				dart.do_fire(Camera3D, muzzle, SPRAY_AMOUNT, ATTACK)
+				dart.do_fire($Camera3D, muzzle, SPRAY_AMOUNT, ATTACK)
 				spray_lock = 0.2
 	spray_lock = max(spray_lock - delta, 0.0)
 	var dir = (nav_agent.target_position - global_position).normalized()
@@ -58,7 +75,10 @@ func take_damage(dmg, override=false, headshot=false, spawn_origin=null):
 			if randi_range(0, 100) > 66.6:
 				nav_agent.target_position = spawn_origin
 				$HuntTimer.start()
-		#TODO: hit sound
+		if audio_player.playing:
+			await audio_player.finished
+		audio_player.stream = dink_sound if headshot else hit_sound
+		audio_player.play()
 
 
 func _on_hunt_timer_timeout():

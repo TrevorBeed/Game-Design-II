@@ -48,6 +48,10 @@ var AMMO = CLIP_SIZE
 var TOTAL_AMMO = 150
 var is_reloading = false
 
+@onready var audio_player = $AudioStreamPlayer3D
+var reload_sound = preload("res://assets/sounds/recharge.mp3")
+var hit_sound = preload("res://assets/sounds/hitHurt.wav")
+var dink_sound = preload("res://assets/sounds/hitHead.wav")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -96,7 +100,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("reload") or (Input.is_action_just_pressed("fire") and AMMO == 0):
 		if TOTAL_AMMO > 0 and not is_reloading and AMMO != CLIP_SIZE:
 			is_reloading = true
-			#TODO: Sound
+			audio_player.stream = reload_sound
+			audio_player.play()
 			await get_tree().create_timer(2).timeout
 			var ammo_needed = CLIP_SIZE - AMMO
 			var new_ammo = min(ammo_needed, TOTAL_AMMO)
@@ -178,6 +183,10 @@ func take_damage(dmg, override=false, headshot=false, _spawn_origin=null):
 		var dmg_intensity = clamp(1.0-((HEALTH+0.01)/MAX_HEALTH), 0.1, 0.8)
 		$HUD/overlay.material = damage_shader.duplicate()
 		$HUD/overlay.material.set_shader_parameter("intensity", dmg_intensity)
+		if audio_player.playing:
+			await audio_player.finished
+		audio_player.stream = dink_sound if headshot else hit_sound
+		audio_player.play()
 
 
 func headbob(time):

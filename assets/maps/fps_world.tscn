@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://6gau16rekixy"]
+[gd_scene load_steps=8 format=3 uid="uid://6gau16rekixy"]
 
 [ext_resource type="PackedScene" uid="uid://3ic2ofeflh8b" path="res://assets/maps/de_dust_2_with_real_light.tscn" id="1_awfoc"]
 [ext_resource type="PackedScene" uid="uid://birt61nqja7ce" path="res://fps_player_template.tscn" id="2_vba7x"]
 [ext_resource type="PackedScene" uid="uid://de7ro4edke05u" path="res://fps_enemy_template.tscn" id="3_7r2j4"]
+[ext_resource type="PackedScene" uid="uid://bo5f78sds1mju" path="res://med.tscn" id="4_g3xrq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w4052"]
 sky_top_color = Color(0.505882, 0.752941, 0.878431, 1)
@@ -54,3 +55,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3367, -2.67246, -63.8598)
 
 [node name="fps_enemy7" parent="." instance=ExtResource("3_7r2j4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5234, 1.08409, -62.5083)
+
+[node name="Med" parent="." instance=ExtResource("4_g3xrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2663, 1.79545, -3.47429)

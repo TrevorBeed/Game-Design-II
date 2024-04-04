@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://med.gd" id="1_ndsaf"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ay2ds"]
-size = Vector3(0.576145, 0.43466, 0.547107)
+size = Vector3(0.58105, 0.412858, 0.563111)
 
 [node name="Med" type="Node3D"]
 script = ExtResource("1_ndsaf")
@@ -15,3 +15,5 @@ size = Vector3(0.539877, 0.396603, 0.537865)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_ay2ds")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

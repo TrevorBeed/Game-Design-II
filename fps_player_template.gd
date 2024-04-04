@@ -169,6 +169,8 @@ func _physics_process(delta):
 	
 	move_and_slide()
 	
+	
+	
 	if int(HEALTH) <= 0:
 		HEALTH = 0
 		await get_tree().create_timer(0.25).timeout

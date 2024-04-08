@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bewtouvrpnsxl"
-path.s3tc="res://.godot/imported/gobot_gobot_diffuse.png-b2123cb94fd088d4e600a767784d6268.s3tc.ctex"
+uid="uid://bd868fd2ch826"
+path.s3tc="res://.godot/imported/gobot_gobot_roughness.png-8af99006037eda529af89e36cdb41339.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/gobot_gobot_diffuse.png"
-dest_files=["res://.godot/imported/gobot_gobot_diffuse.png-b2123cb94fd088d4e600a767784d6268.s3tc.ctex"]
+source_file="res://assets/models/gobot_gobot_roughness.png"
+dest_files=["res://.godot/imported/gobot_gobot_roughness.png-8af99006037eda529af89e36cdb41339.s3tc.ctex"]
 
 [params]
 

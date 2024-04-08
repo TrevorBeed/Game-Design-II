@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfb5ebhhi6b8m"
-path="res://.godot/imported/gobot.glb-8c455373e98384245e1236ffaef75da4.scn"
+uid="uid://jenjxcstf336"
+path="res://.godot/imported/van.glb-f7752191a3f52d74e384aee6383325a9.scn"
 
 [deps]
 
-source_file="res://models/gobot.glb"
-dest_files=["res://.godot/imported/gobot.glb-8c455373e98384245e1236ffaef75da4.scn"]
+source_file="res://assets/models/Car Kit/van.glb"
+dest_files=["res://.godot/imported/van.glb-f7752191a3f52d74e384aee6383325a9.scn"]
 
 [params]
 

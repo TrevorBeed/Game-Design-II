@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bc5pom6o483td"]
+[gd_scene load_steps=7 format=3 uid="uid://bc5pom6o483td"]
 
 [ext_resource type="PackedScene" uid="uid://bdutlqnndt0jq" path="res://rc_player.tscn" id="1_g2bwr"]
 
@@ -16,7 +16,11 @@ background_mode = 2
 sky = SubResource("Sky_sg4kx")
 tonemap_mode = 2
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kho6"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_lvvuy"]
+material = SubResource("StandardMaterial3D_7kho6")
 
 [node name="rc_world" type="Node3D"]
 
@@ -34,4 +38,29 @@ use_collision = true
 mesh = SubResource("PlaneMesh_lvvuy")
 
 [node name="race" parent="." instance=ExtResource("1_g2bwr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67345, 0, 0.994736)
+transform = Transform3D(-0.035981, 0, -0.999352, 0, 1, 0, 0.999352, 0, -0.035981, -1.67345, 0.537308, 0.994736)
+
+[node name="Ramp 1" type="CSGBox3D" parent="."]
+transform = Transform3D(0.890276, -0.455421, 0, 0.455421, 0.890276, 0, 0, 0, 1, 6.07546, 0.617028, 0)
+use_collision = true
+size = Vector3(5.18205, 0.572491, 4.65805)
+
+[node name="Ramp 5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.890276, -0.455421, 0, 0.455421, 0.890276, 0, 0, 0, 1, -29.9277, 4.46803, 0)
+use_collision = true
+size = Vector3(23.5919, 0.572491, 14.6023)
+
+[node name="Ramp 4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.890276, -0.455421, 0, 0.455421, 0.890276, 0, 0, 0, 1, 19.4793, 0.617028, 30.2318)
+use_collision = true
+size = Vector3(5.18205, 0.572491, 4.65805)
+
+[node name="Ramp 2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.912849, 0.408299, 0, -0.408299, 0.912849, 0, 0, 0, 1, 30.2219, 0.617028, 0)
+use_collision = true
+size = Vector3(5.18205, 0.572491, 4.65805)
+
+[node name="Ramp 3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.912849, 0.408299, 0, -0.408299, 0.912849, 0, 0, 0, 1, -16.0433, 0.617028, 29.7393)
+use_collision = true
+size = Vector3(5.18205, 0.572491, 4.65805)

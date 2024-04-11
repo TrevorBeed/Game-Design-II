@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://db2x0i8no5b4f"
+path="res://.godot/imported/Prop_Decorative_Rock_5.obj-5fbe7587f589dfb90949632e7d5bcd46.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Decorative_Rock_5.obj-5fbe7587f589dfb90949632e7d5bcd46.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Prop_Decorative_Rock_5.obj"
+dest_files=["res://.godot/imported/Prop_Decorative_Rock_5.obj-5fbe7587f589dfb90949632e7d5bcd46.mesh", "res://.godot/imported/Prop_Decorative_Rock_5.obj-5fbe7587f589dfb90949632e7d5bcd46.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://caomk3q6kx28j"
+path="res://.godot/imported/Track_Bridge_Curve_3x3_Collider.obj-430ce57fc7cc76b9c90d6f70aae962cd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track_Bridge_Curve_3x3_Collider.obj-430ce57fc7cc76b9c90d6f70aae962cd.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Track_Bridge_Curve_3x3_Collider.obj"
+dest_files=["res://.godot/imported/Track_Bridge_Curve_3x3_Collider.obj-430ce57fc7cc76b9c90d6f70aae962cd.mesh", "res://.godot/imported/Track_Bridge_Curve_3x3_Collider.obj-430ce57fc7cc76b9c90d6f70aae962cd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

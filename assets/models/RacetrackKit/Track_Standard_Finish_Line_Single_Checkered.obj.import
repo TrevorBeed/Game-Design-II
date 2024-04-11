@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ccdpq4uj4owtb"
+path="res://.godot/imported/Track_Standard_Finish_Line_Single_Checkered.obj-0635ae1f7c0374f35e7c08645086edc1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track_Standard_Finish_Line_Single_Checkered.obj-0635ae1f7c0374f35e7c08645086edc1.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Track_Standard_Finish_Line_Single_Checkered.obj"
+dest_files=["res://.godot/imported/Track_Standard_Finish_Line_Single_Checkered.obj-0635ae1f7c0374f35e7c08645086edc1.mesh", "res://.godot/imported/Track_Standard_Finish_Line_Single_Checkered.obj-0635ae1f7c0374f35e7c08645086edc1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

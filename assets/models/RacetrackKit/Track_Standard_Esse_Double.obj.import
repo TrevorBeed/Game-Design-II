@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfvulq2qhxl3y"
+path="res://.godot/imported/Track_Standard_Esse_Double.obj-eb4bce0bacf3935f827cda2546f2da59.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track_Standard_Esse_Double.obj-eb4bce0bacf3935f827cda2546f2da59.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Track_Standard_Esse_Double.obj"
+dest_files=["res://.godot/imported/Track_Standard_Esse_Double.obj-eb4bce0bacf3935f827cda2546f2da59.mesh", "res://.godot/imported/Track_Standard_Esse_Double.obj-eb4bce0bacf3935f827cda2546f2da59.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

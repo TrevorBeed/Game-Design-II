@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dpl74pgmsld7q"
+path="res://.godot/imported/Track_Cliff_Edge_Striped_3_Tall_Double.obj-b56aa058d5df26b29839ca91d8b6f70c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Track_Cliff_Edge_Striped_3_Tall_Double.obj-b56aa058d5df26b29839ca91d8b6f70c.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Track_Cliff_Edge_Striped_3_Tall_Double.obj"
+dest_files=["res://.godot/imported/Track_Cliff_Edge_Striped_3_Tall_Double.obj-b56aa058d5df26b29839ca91d8b6f70c.mesh", "res://.godot/imported/Track_Cliff_Edge_Striped_3_Tall_Double.obj-b56aa058d5df26b29839ca91d8b6f70c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

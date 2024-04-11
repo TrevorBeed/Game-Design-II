@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://8ii2oonxkefn"
+path="res://.godot/imported/Prop_Track_Ramp_Speed_Boost.obj-46263f757cd0c3560a1b6a4b954a1000.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Track_Ramp_Speed_Boost.obj-46263f757cd0c3560a1b6a4b954a1000.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Prop_Track_Ramp_Speed_Boost.obj"
+dest_files=["res://.godot/imported/Prop_Track_Ramp_Speed_Boost.obj-46263f757cd0c3560a1b6a4b954a1000.mesh", "res://.godot/imported/Prop_Track_Ramp_Speed_Boost.obj-46263f757cd0c3560a1b6a4b954a1000.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

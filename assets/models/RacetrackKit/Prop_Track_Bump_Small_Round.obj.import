@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwcxmjnqkj2cr"
+path="res://.godot/imported/Prop_Track_Bump_Small_Round.obj-530dd1e8bd5b9905da78c7cc1a33504c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Track_Bump_Small_Round.obj-530dd1e8bd5b9905da78c7cc1a33504c.mesh"]
+
+source_file="res://assets/models/RacetrackKit/Prop_Track_Bump_Small_Round.obj"
+dest_files=["res://.godot/imported/Prop_Track_Bump_Small_Round.obj-530dd1e8bd5b9905da78c7cc1a33504c.mesh", "res://.godot/imported/Prop_Track_Bump_Small_Round.obj-530dd1e8bd5b9905da78c7cc1a33504c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

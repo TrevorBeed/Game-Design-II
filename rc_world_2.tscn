@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://cg05uvl8kx8wk"]
+
+[ext_resource type="PackedScene" uid="uid://bdutlqnndt0jq" path="res://rc_player.tscn" id="1_ls0kv"]
+[ext_resource type="MeshLibrary" uid="uid://hr36biqd7w10" path="res://assets/meshes/road_tiles.tres" id="2_kufkr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6dfg"]
+sky_top_color = Color(0, 0.670588, 0.882353, 1)
+sky_horizon_color = Color(0.5, 0.667647, 0.720588, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.5, 0.667647, 0.720588, 1)
+
+[sub_resource type="Sky" id="Sky_qaw8g"]
+sky_material = SubResource("ProceduralSkyMaterial_q6dfg")
+
+[sub_resource type="Environment" id="Environment_mukv8"]
+background_mode = 2
+sky = SubResource("Sky_qaw8g")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6syug"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1r40"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="rc_world2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mukv8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.986286, -0.0720932, 0.14847, 0, 0.899558, 0.436802, -0.165048, -0.430811, 0.887221, 0, 0, 0)
+light_color = Color(1, 1, 0.298039, 1)
+shadow_enabled = true
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0)
+visible = false
+use_collision = true
+mesh = SubResource("PlaneMesh_6syug")
+material = SubResource("StandardMaterial3D_t1r40")
+
+[node name="race" parent="." instance=ExtResource("1_ls0kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6321, -1.86265e-07, -34.5215)
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+mesh_library = ExtResource("2_kufkr")
+cell_size = Vector3(1, 2, 2)
+cell_center_y = false

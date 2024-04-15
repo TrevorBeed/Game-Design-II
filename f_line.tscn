@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnpxqluod16ts"]
+
+[ext_resource type="Script" path="res://f_line.gd" id="1_scgdo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wi2ip"]
+size = Vector3(9, 2.183, 0.312)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uo1u2"]
+size = Vector3(9, 2.183, 0.312)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvyhx"]
+albedo_color = Color(0, 0.25098, 0.709804, 0.329412)
+
+[node name="F_Line" type="Area3D"]
+script = ExtResource("1_scgdo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_wi2ip")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uo1u2")
+skeleton = NodePath("../CollisionShape3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_vvyhx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

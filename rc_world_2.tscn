@@ -23,12 +23,12 @@ tonemap_mode = 2
 environment = SubResource("Environment_mukv8")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.986286, -0.0720932, 0.14847, 0, 0.899558, 0.436802, -0.165048, -0.430811, 0.887221, 0, 0, 0)
+transform = Transform3D(0.986286, -0.0720932, 0.14847, 0, 0.899558, 0.436801, -0.165048, -0.430811, 0.887221, 0, 0, 0)
 light_color = Color(1, 1, 0.298039, 1)
 shadow_enabled = true
 
 [node name="race" parent="." instance=ExtResource("1_ls0kv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6321, -1.86265e-07, -34.5215)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.6321, -1.86265e-07, -35.4874)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)

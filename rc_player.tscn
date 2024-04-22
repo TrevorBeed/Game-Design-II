@@ -5,7 +5,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk8id"]
 resource_name = "paintRed"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 0.227451, 0.360134, 1)
+albedo_color = Color(0.439216, 0.231373, 0.682353, 1)
 metallic = 1.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ilwq"]

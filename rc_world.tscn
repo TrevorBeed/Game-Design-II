@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bc5pom6o483td"]
+[gd_scene load_steps=10 format=3 uid="uid://bc5pom6o483td"]
 
 [ext_resource type="PackedScene" uid="uid://bdutlqnndt0jq" path="res://rc_player.tscn" id="1_g2bwr"]
 [ext_resource type="MeshLibrary" uid="uid://hr36biqd7w10" path="res://assets/meshes/road_tiles.tres" id="2_l5naw"]
 [ext_resource type="PackedScene" uid="uid://dnpxqluod16ts" path="res://f_line.tscn" id="3_nsd58"]
+[ext_resource type="PackedScene" uid="uid://c6yml54r5acpt" path="res://rc_enemy.tscn" id="4_xwqtd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_n38t7"]
 sky_top_color = Color(0.239216, 0.470588, 0.584314, 1)
@@ -56,3 +57,6 @@ metadata/_editor_floor_ = Vector3(0, 2, 0)
 [node name="F_Line" parent="." instance=ExtResource("3_nsd58")]
 transform = Transform3D(-3.0598e-07, 0, 7, 0, 7, 0, -7, 0, -3.0598e-07, 7.63381, 1.60414, 19.9455)
 visible = false
+
+[node name="rc_enemy" parent="." instance=ExtResource("4_xwqtd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.4439, 8.34465e-07, 25.8952)

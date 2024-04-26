@@ -228,22 +228,22 @@ transform = Transform3D(-1.66667, 0, -1.45705e-07, 0, 1.66667, 0, 1.45705e-07, 0
 mesh = SubResource("ArrayMesh_m1dn5")
 skeleton = NodePath("")
 
-[node name="backleft" type="VehicleWheel3D" parent="."]
+[node name="backLeft" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-0.6, 0, 5.24537e-08, 0, 0.6, 0, -5.24537e-08, 0, -0.6, -0.511557, 0.266936, 0.87474)
 use_as_traction = true
 wheel_friction_slip = 9.5
 
-[node name="wheel_backLeft" type="MeshInstance3D" parent="backleft"]
+[node name="wheel_backLeft" type="MeshInstance3D" parent="backLeft"]
 transform = Transform3D(1.66667, 0, 2.84217e-14, 0, 1.66667, 0, -2.84217e-14, 0, 1.66667, -0.269261, 0.0551059, -0.00895655)
 mesh = SubResource("ArrayMesh_m1dn5")
 skeleton = NodePath("")
 
-[node name="backright" type="VehicleWheel3D" parent="."]
+[node name="backRight" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-0.6, 0, 5.24537e-08, 0, 0.6, 0, -5.24537e-08, 0, -0.6, 0.480789, 0.266936, 0.87474)
 use_as_traction = true
 wheel_friction_slip = 9.5
 
-[node name="wheel_backRight" type="MeshInstance3D" parent="backright"]
+[node name="wheel_backRight" type="MeshInstance3D" parent="backRight"]
 transform = Transform3D(-1.66667, 0, -1.45705e-07, 0, 1.66667, 0, 1.45705e-07, 0, -1.66667, 0.217981, 0.0551059, -0.00895703)
 mesh = SubResource("ArrayMesh_m1dn5")
 skeleton = NodePath("")

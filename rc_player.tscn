@@ -255,10 +255,6 @@ transform = Transform3D(-1.66667, 0, -1.45705e-07, 0, 1.66667, 0, 1.45705e-07, 0
 mesh = SubResource("ArrayMesh_wttdx")
 skeleton = NodePath("")
 
-[node name="centerMass2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.260159, 0)
-top_level = true
-
 [node name="centerMass" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.373547, 0.161769)
 top_level = true
@@ -279,3 +275,5 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "0 mph"
 label_settings = SubResource("LabelSettings_c1gij")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

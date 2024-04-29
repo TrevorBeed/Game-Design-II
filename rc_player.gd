@@ -24,8 +24,14 @@ func _physics_process(delta):
 	if accel > 0:
 		if audio_player.playing:
 			await audio_player.finished
-		audio_player.stream = moving if accel <= 0 else idle
+		audio_player.stream = moving
 		audio_player.play()
+	elif accel <= 0:
+		if audio_player.playing:
+			await audio_player.finished
+			audio_player.stream = idle
+		audio_player.play()
+			
 		
 	
 	var fwd_mps = abs((self.linear_velocity * self.transform.basis).z)

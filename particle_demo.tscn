@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://cymf3bimpknfe"]
+
+[ext_resource type="Script" path="res://particle_demo.gd" id="1_dshbw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gt8ye"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_jwm0v"]
+sky_material = SubResource("ProceduralSkyMaterial_gt8ye")
+
+[sub_resource type="Environment" id="Environment_kq8f8"]
+background_mode = 2
+sky = SubResource("Sky_jwm0v")
+tonemap_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_pe4mq"]
+offsets = PackedFloat32Array(0.141304, 0.891304)
+colors = PackedColorArray(0, 0, 0, 1, 0.37, 0.22348, 0.0444, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i4cj0"]
+gradient = SubResource("Gradient_pe4mq")
+
+[sub_resource type="Curve" id="Curve_i2bk8"]
+_data = [Vector2(0.0219298, 0), 0.0, 0.0, 0, 0, Vector2(0.539474, 1), 0.0, 0.0, 0, 0, Vector2(0.986842, 0.188612), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ysaho"]
+curve = SubResource("Curve_i2bk8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0tta6"]
+direction = Vector3(0, 1, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+angular_velocity_max = 40.0
+linear_accel_min = 1.0
+linear_accel_max = 5.0
+angle_max = 360.0
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_ysaho")
+color_initial_ramp = SubResource("GradientTexture1D_i4cj0")
+turbulence_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l730n"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.301961, 0.301961, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_ntxu2"]
+material = SubResource("StandardMaterial3D_l730n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qf4mj"]
+albedo_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[node name="Particle_demo" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00360543, 0, 0)
+script = ExtResource("1_dshbw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kq8f8")
+
+[node name="fire_particle" type="GPUParticles3D" parent="."]
+amount = 500
+lifetime = 0.3
+randomness = 1.0
+local_coords = true
+draw_order = 3
+process_material = SubResource("ParticleProcessMaterial_0tta6")
+draw_pass_1 = SubResource("QuadMesh_ntxu2")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+height = 0.03
+sides = 16
+material = SubResource("StandardMaterial3D_qf4mj")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.974792, 0.223114, 0, -0.223114, 0.974792, 0, 0.953531, 1.8252)

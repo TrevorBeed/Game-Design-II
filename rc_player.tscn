@@ -277,3 +277,4 @@ text = "0 mph"
 label_settings = SubResource("LabelSettings_c1gij")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+doppler_tracking = 2

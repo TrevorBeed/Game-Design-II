@@ -6,8 +6,8 @@ const MAX_TORQUE = 200
 const HORSE_POWER = 100
 
 @onready var audio_player = $AudioStreamPlayer3D
-var idle = preload("res://assets/sounds/transport_car_drive_fast_race_engine_perspective.mp3") #FIND NEW SOUND
-var moving = preload("res://assets/sounds/zapsplat_vehicles_car_diesel_engine_idle_close_under_engine_nissan_patrol_1998_67744.mp3")
+var moving = preload("res://assets/sounds/transport_car_drive_fast_race_engine_perspective.mp3") #FIND NEW SOUND
+var idle = preload("res://assets/sounds/zapsplat_vehicles_car_diesel_engine_idle_close_under_engine_nissan_patrol_1998_67744.mp3")
 
 
 func _ready():
@@ -20,18 +20,16 @@ func _physics_process(delta):
 	steering = lerp(steering, Input.get_axis("ui_right", "ui_left") * MAX_STEER, delta*5)
 	var accel = Input.get_axis("ui_down", "ui_up") * HORSE_POWER
 	if accel > 0:
-		if not audio_player.playing:
+		var max_dB = 110
+		var dB = clamp(max_dB*abs($backleft.engine_force/MAX_RPM), -10, max_dB)
+		$AudioStreamPlayer3D.volume_db = dB
+		if not $AudioStreamPlayer3D.is_playing():
 			audio_player.stream = moving
 			audio_player.play()
-	elif accel <= 0:
-		audio_player.stream = idle
-		audio_player.play()
-	if accel > 0:
-		var dB = min(1, 80 * ($backleft.engine_force / MAX_RPM))
-		#play engine sound / dB
-	else:
-		audio_player.stream = idle
-		audio_player.play()
+		else:
+			$AudioStreamPlayer3D.volume_db = 10
+			audio_player.stream = idle
+			audio_player.play()
 			
 	$backleft.engine_force = calc_engine_force(accel, abs($backleft.get_rpm()))
 	$backright.engine_force = calc_engine_force(accel, abs($backright.get_rpm()))

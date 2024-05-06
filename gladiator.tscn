@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgli2mblmsf8l"]
+[gd_scene load_steps=6 format=3 uid="uid://dgli2mblmsf8l"]
 
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="1_m5828"]
+[ext_resource type="PackedScene" uid="uid://bpuyk0gwiu3qx" path="res://arena.tscn" id="2_agofs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_djrro"]
+sky_top_color = Color(0.513726, 0.584314, 0.682353, 1)
+sky_horizon_color = Color(0.678431, 0.688328, 0.703838, 1)
+ground_horizon_color = Color(0.678431, 0.688328, 0.703838, 1)
+
+[sub_resource type="Sky" id="Sky_vrg1o"]
+sky_material = SubResource("ProceduralSkyMaterial_djrro")
+
+[sub_resource type="Environment" id="Environment_0qw7i"]
+background_mode = 2
+sky = SubResource("Sky_vrg1o")
+tonemap_mode = 2
 
 [node name="Gladiator" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0qw7i")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+light_color = Color(0.988235, 0.984314, 1, 1)
+shadow_enabled = true
+
 [node name="rpg_player" parent="." instance=ExtResource("1_m5828")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90646, 1.19209e-07, 1.87088)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74058, 3.94106, 16.8542)
+
+[node name="arena" parent="." instance=ExtResource("2_agofs")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 0, 2)

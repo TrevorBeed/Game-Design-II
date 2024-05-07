@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgli2mblmsf8l"]
+[gd_scene load_steps=7 format=3 uid="uid://dgli2mblmsf8l"]
 
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="1_m5828"]
 [ext_resource type="PackedScene" uid="uid://bpuyk0gwiu3qx" path="res://arena.tscn" id="2_agofs"]
+[ext_resource type="PackedScene" uid="uid://ccadlt1u5peye" path="res://glad_enemy.tscn" id="3_c0wpy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_djrro"]
 sky_top_color = Color(0.513726, 0.584314, 0.682353, 1)
@@ -31,3 +32,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74058, 3.94106, 16.8542)
 
 [node name="arena" parent="." instance=ExtResource("2_agofs")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3, 0, 2)
+
+[node name="Glad_enemy" parent="." instance=ExtResource("3_c0wpy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.829, 8.79871, 4.77803)

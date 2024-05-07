@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccadlt1u5peye"]
+
+[ext_resource type="Script" path="res://Glad_enemy.gd" id="1_kdro8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ur41j"]
+radius = 0.559509
+height = 2.19683
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_il2a4"]
+albedo_color = Color(0.552941, 0.054902, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gqbgp"]
+material = SubResource("StandardMaterial3D_il2a4")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_akax4"]
+radius = 0.529423
+height = 2.09325
+
+[node name="Glad_enemy" type="Node3D"]
+script = ExtResource("1_kdro8")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="Damage Area" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Damage Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302056, 0)
+shape = SubResource("CapsuleShape3D_ur41j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_gqbgp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_akax4")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Enemy3D.gd" id="1_axtmo"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wy16y"]
-radius = 0.53586
+radius = 0.525637
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g328l"]
 

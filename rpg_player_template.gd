@@ -18,7 +18,7 @@ const CAM_SENSITIVITY = 0.03
 @onready var BASE_FOV = camera.fov  # 75
 var FOV_CHANGE = 1.0
 
-# @onready var animator = $gobot/AnimationPlayer
+@onready var animator = $gobot/AnimationPlayer
 
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08

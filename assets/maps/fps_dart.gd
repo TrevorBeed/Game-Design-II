@@ -23,6 +23,7 @@ func _physics_process(delta):
 	linear_velocity.y -= gravity * delta
 	do_damage("Player")
 	do_damage("Enemy")
+	
 
 func do_damage(group):
 	var crit = max(0, randf_range(-ATTACK_CRIT, ATTACK_CRIT))

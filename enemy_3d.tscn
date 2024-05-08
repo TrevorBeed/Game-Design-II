@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Enemy3D.gd" id="1_axtmo"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_wy16y"]
-radius = 0.525637
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6v3wd"]
+radius = 0.676833
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g328l"]
 
@@ -24,11 +24,11 @@ script = ExtResource("1_axtmo")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="DamageArea" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.277976, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0265257, 0.277976, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DamageArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00942266, 0.408367, 0)
-shape = SubResource("SphereShape3D_wy16y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011438, -0.238759, 0)
+shape = SubResource("CapsuleShape3D_6v3wd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_g328l")

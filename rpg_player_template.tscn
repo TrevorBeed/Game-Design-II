@@ -36,11 +36,11 @@ metallic_specular = 0.8
 metallic_texture = SubResource("NoiseTexture2D_p2g63")
 
 [sub_resource type="PrismMesh" id="PrismMesh_htp26"]
-size = Vector3(0.116, 0.245, 0.016)
+size = Vector3(0.116, 0.26, 0.016)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dhldf"]
 radius = 0.135724
-height = 1.31631
+height = 1.34819
 
 [node name="rpg_player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_xvls4")
@@ -89,12 +89,12 @@ size = Vector3(0.115329, 0.0163852, 0.62277)
 material = SubResource("StandardMaterial3D_uecne")
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Sword/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.430744, 1.417, -1.74896)
+transform = Transform3D(1, 1.49012e-07, -5.58794e-08, -5.96046e-08, -2.68221e-07, 0.999999, 0, -1, -1.49012e-08, 0.428792, 1.41577, -1.75845)
 mesh = SubResource("PrismMesh_htp26")
 material = SubResource("StandardMaterial3D_uecne")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sword"]
-transform = Transform3D(0.97237, 0.225491, -0.0604201, 0.0229506, 0.165227, 0.985989, 0.232315, -0.960132, 0.155486, 0.821373, 1.35195, -0.911665)
+transform = Transform3D(0.97237, 0.225491, -0.0604201, 0.0229506, 0.165227, 0.985989, 0.232315, -0.960132, 0.155486, 0.821373, 1.35195, -0.935307)
 shape = SubResource("CapsuleShape3D_dhldf")
 
 [node name="CollisionTimer" type="Timer" parent="Sword"]

@@ -43,6 +43,14 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+		
+	#if all enemies are dead go to new scene
+	if len(get_tree().get_nodes_in_group("Enemy")) <= 0:
+		await get_tree().create_timer(0.25).timeout
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		OS.alert("You Win!")
+		#TODO: change scene
+		get_tree().quit()
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -195,4 +203,6 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera_arm.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 		camera_arm.rotation.x = clamp(camera_arm.rotation.x, deg_to_rad(-75), deg_to_rad(75))
+		
+#
 

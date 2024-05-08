@@ -28,13 +28,3 @@ func _physics_process(delta):
 	velocity = velocity.lerp(dir * SPEED, ACCEL * delta)
 	move_and_slide()
 
-
-#WORK ON THIS
-func take_damage(dmg):
-	if damage_lock == 0.0:
-		damage_lock = 0.5
-		HEALTH -= dmg
-	if HEALTH <= 0:
-		queue_free()
-		
-

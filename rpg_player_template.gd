@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var next_level = ""
 
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.5
@@ -49,8 +50,9 @@ func _physics_process(delta):
 		await get_tree().create_timer(0.25).timeout
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You Win!")
-		#TODO: change scene
-		get_tree().quit()
+		await get_tree().create_timer(0.1).timeout
+		var lvl = "res://" + next_level + ".tscn"
+		get_tree().change_scene_to_file(lvl)
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -204,5 +206,6 @@ func _unhandled_input(event):
 		camera_arm.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 		camera_arm.rotation.x = clamp(camera_arm.rotation.x, deg_to_rad(-75), deg_to_rad(75))
 		
-#
+
+
 

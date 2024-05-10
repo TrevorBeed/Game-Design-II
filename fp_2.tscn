@@ -1,37 +1,37 @@
 [gd_scene load_steps=7 format=3 uid="uid://c0f4u4frc2whi"]
 
-[ext_resource type="PackedScene" uid="uid://dxdc23swqkc7h" path="res://hell_arena.tscn" id="1_naetq"]
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="2_wf7x0"]
+[ext_resource type="PackedScene" uid="uid://cltcbmbvt0l0m" path="res://ship_arena.tscn" id="3_56dn8"]
 [ext_resource type="PackedScene" uid="uid://cq2ryo500onwu" path="res://FP_enemy.tscn" id="3_mu268"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_c0bv7"]
-sky_top_color = Color(0.921569, 0.0235294, 0, 1)
-sky_horizon_color = Color(0.780392, 0.548132, 0.53325, 1)
-ground_horizon_color = Color(0.780392, 0.548132, 0.53325, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vmt3r"]
+sky_top_color = Color(0.333333, 0.505882, 1, 1)
+sky_horizon_color = Color(0.633333, 0.668721, 0.78325, 1)
+ground_horizon_color = Color(0.633333, 0.668721, 0.78325, 1)
 
-[sub_resource type="Sky" id="Sky_vp4oj"]
-sky_material = SubResource("ProceduralSkyMaterial_c0bv7")
+[sub_resource type="Sky" id="Sky_6pwrx"]
+sky_material = SubResource("ProceduralSkyMaterial_vmt3r")
 
-[sub_resource type="Environment" id="Environment_qkx1g"]
+[sub_resource type="Environment" id="Environment_ke2as"]
 background_mode = 2
-sky = SubResource("Sky_vp4oj")
+sky = SubResource("Sky_6pwrx")
 tonemap_mode = 2
 
 [node name="fp2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_qkx1g")
+environment = SubResource("Environment_ke2as")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0, 0, 0, 1)
+light_color = Color(1, 1, 0.447059, 1)
 shadow_enabled = true
 
-[node name="hell_arena" parent="." instance=ExtResource("1_naetq")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 5, 0, -3)
-
 [node name="Player" parent="." instance=ExtResource("2_wf7x0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.73626, 21.038, 32.8877)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5169, 24.5465, 78.4455)
 
 [node name="Enemy" parent="." instance=ExtResource("3_mu268")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63173, 13.4514, -8.50673)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3882, 25.0857, 60.1229)
+
+[node name="ship arena" parent="." instance=ExtResource("3_56dn8")]
+transform = Transform3D(0.36, 0, 0, 0, 0.36, 0, 0, 0, 0.36, 11.3193, 23.9358, 37.2844)

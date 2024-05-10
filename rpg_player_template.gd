@@ -6,7 +6,7 @@ const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.5
 var SPEED = WALK_SPEED
 
-const JUMP_VELOCITY = 5.0
+const JUMP_VELOCITY = 6.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -20,6 +20,8 @@ const CAM_SENSITIVITY = 0.03
 var FOV_CHANGE = 1.0
 
 @onready var animator = $gobot/AnimationPlayer
+
+@onready var win = 0
 
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
@@ -49,10 +51,12 @@ func _physics_process(delta):
 	if len(get_tree().get_nodes_in_group("Enemy")) <= 0:
 		await get_tree().create_timer(0.25).timeout
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		OS.alert("You Win!")
-		await get_tree().create_timer(0.1).timeout
-		var lvl = "res://" + next_level + ".tscn"
-		get_tree().change_scene_to_file(lvl)
+		OS.alert("You Survived!")
+		win = 1
+		if "fp" in get_tree().current_scene.name:
+			get_tree().change_scene_to_file("res://fp.tscn")
+		else:
+			get_tree().change_scene_to_file("res://fp_2.tscn")
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -177,7 +181,7 @@ func take_damage(dmg):
 			await get_tree().create_timer(0.25).timeout
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 			OS.alert("You died!")
-			get_tree().reload_current_scene()
+			get_tree().change_scene_to_file("res://fp.tscn")
 
 func headbob(time):
 	var pos = Vector3.ZERO

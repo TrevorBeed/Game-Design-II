@@ -52,9 +52,8 @@ func _physics_process(delta):
 		await get_tree().create_timer(0.25).timeout
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You Survived!")
-		win = 1
 		if "fp" in get_tree().current_scene.name:
-			get_tree().change_scene_to_file("res://fp.tscn")
+			get_tree().change_scene_to_file("res://fp_3.tscn")
 		else:
 			get_tree().change_scene_to_file("res://fp_2.tscn")
 

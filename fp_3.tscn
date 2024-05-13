@@ -4,23 +4,23 @@
 [ext_resource type="PackedScene" uid="uid://cq2ryo500onwu" path="res://FP_enemy.tscn" id="2_cxxr2"]
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="3_3uv4k"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yr7c5"]
-sky_top_color = Color(1, 0.690196, 0.643137, 1)
-sky_horizon_color = Color(0.8, 0.714799, 0.694034, 1)
-ground_horizon_color = Color(0.8, 0.714799, 0.694034, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mce64"]
+sky_top_color = Color(0.65098, 0, 0.0117647, 1)
+sky_horizon_color = Color(0.712745, 0.54225, 0.536191, 1)
+ground_horizon_color = Color(0.712745, 0.54225, 0.536191, 1)
 
-[sub_resource type="Sky" id="Sky_saalb"]
-sky_material = SubResource("ProceduralSkyMaterial_yr7c5")
+[sub_resource type="Sky" id="Sky_730en"]
+sky_material = SubResource("ProceduralSkyMaterial_mce64")
 
-[sub_resource type="Environment" id="Environment_rd0mq"]
+[sub_resource type="Environment" id="Environment_yrdjc"]
 background_mode = 2
-sky = SubResource("Sky_saalb")
+sky = SubResource("Sky_730en")
 tonemap_mode = 2
 
 [node name="fp3" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rd0mq")
+environment = SubResource("Environment_yrdjc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)

@@ -1,37 +1,43 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciuc6fhn7d13x"]
+[gd_scene load_steps=8 format=3 uid="uid://5jc44eccuxjc"]
 
 [ext_resource type="PackedScene" uid="uid://dxdc23swqkc7h" path="res://hell_arena.tscn" id="1_hanra"]
 [ext_resource type="PackedScene" uid="uid://cq2ryo500onwu" path="res://FP_enemy.tscn" id="2_cxxr2"]
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="3_3uv4k"]
+[ext_resource type="PackedScene" uid="uid://bsqdlog7wmtwv" path="res://void.tscn" id="4_fj1km"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mce64"]
-sky_top_color = Color(0.65098, 0, 0.0117647, 1)
-sky_horizon_color = Color(0.712745, 0.54225, 0.536191, 1)
-ground_horizon_color = Color(0.712745, 0.54225, 0.536191, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00gec"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.54902, 0.5, 0.5, 1)
+ground_bottom_color = Color(0.196078, 0, 0, 1)
+ground_horizon_color = Color(0.54902, 0.5, 0.5, 1)
 
-[sub_resource type="Sky" id="Sky_730en"]
-sky_material = SubResource("ProceduralSkyMaterial_mce64")
+[sub_resource type="Sky" id="Sky_rco23"]
+sky_material = SubResource("ProceduralSkyMaterial_00gec")
 
-[sub_resource type="Environment" id="Environment_yrdjc"]
+[sub_resource type="Environment" id="Environment_lpk1v"]
 background_mode = 2
-sky = SubResource("Sky_730en")
+sky = SubResource("Sky_rco23")
 tonemap_mode = 2
 
 [node name="fp3" type="Node3D"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yrdjc")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0, 0, 0, 1)
+light_color = Color(1, 0.45098, 0.423529, 1)
 shadow_enabled = true
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lpk1v")
+
 [node name="hell_arena" parent="." instance=ExtResource("1_hanra")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 2, 2, 3)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 1.48909, 1.69843, 2.75553)
 
 [node name="Enemy3D" parent="." instance=ExtResource("2_cxxr2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93416, 11.7302, -15.1681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.742304, 9.59136, -0.72754)
 
 [node name="rpg_player" parent="." instance=ExtResource("3_3uv4k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.597136, 10.8275, 17.2009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22968, 7.64293, 11.2504)
+
+[node name="void" parent="." instance=ExtResource("4_fj1km")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.906374, 1.57329, -3.54757)
+visible = false

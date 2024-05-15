@@ -12,9 +12,6 @@ var knockback = 32.0
 
 var MAX_HEALTH = 100
 var HEALTH = MAX_HEALTH
-var damage_lock = 0.0  # Prevent infinite damage
-var attack_lock = 0.0
-var inertia = Vector3.ZERO
 
 func _physics_process(delta):
 	for player in get_tree().get_nodes_in_group("Player"):
@@ -28,3 +25,6 @@ func _physics_process(delta):
 	velocity = velocity.lerp(dir * SPEED, ACCEL * delta)
 	move_and_slide()
 
+func take_damage(dmg, override=false, headshot=false, spawn_origin=null):
+	if override:
+		HEALTH -= dmg

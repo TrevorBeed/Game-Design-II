@@ -26,3 +26,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_dotai")
 shape = SubResource("CylinderShape3D_monjk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

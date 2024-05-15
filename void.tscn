@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsqdlog7wmtwv"]
+
+[ext_resource type="Script" path="res://void.gd" id="1_0v8fg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_26llm"]
+size = Vector3(55.676, 0.088, 62.421)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_btwpn"]
+size = Vector3(55.676, 0.0881768, 62.4213)
+
+[node name="void" type="Area3D"]
+script = ExtResource("1_0v8fg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_26llm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_btwpn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

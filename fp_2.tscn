@@ -4,34 +4,34 @@
 [ext_resource type="PackedScene" uid="uid://cltcbmbvt0l0m" path="res://ship_arena.tscn" id="3_56dn8"]
 [ext_resource type="PackedScene" uid="uid://cq2ryo500onwu" path="res://FP_enemy.tscn" id="3_mu268"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8e20r"]
-sky_top_color = Color(0.458824, 0.639216, 0.780392, 1)
-sky_horizon_color = Color(0.664706, 0.702054, 0.728348, 1)
-ground_horizon_color = Color(0.664706, 0.702054, 0.728348, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lx85c"]
+sky_top_color = Color(0.27451, 0.435294, 0.556863, 1)
+sky_horizon_color = Color(0.618627, 0.651074, 0.672466, 1)
+ground_horizon_color = Color(0.618627, 0.651074, 0.672466, 1)
 
-[sub_resource type="Sky" id="Sky_d4tgn"]
-sky_material = SubResource("ProceduralSkyMaterial_8e20r")
+[sub_resource type="Sky" id="Sky_ndeff"]
+sky_material = SubResource("ProceduralSkyMaterial_lx85c")
 
-[sub_resource type="Environment" id="Environment_yhw04"]
+[sub_resource type="Environment" id="Environment_kt32j"]
 background_mode = 2
-sky = SubResource("Sky_d4tgn")
+sky = SubResource("Sky_ndeff")
 tonemap_mode = 2
 
 [node name="fp2" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_yhw04")
+environment = SubResource("Environment_kt32j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-light_color = Color(0.639216, 0.447059, 0, 1)
+light_color = Color(0.858824, 0.72549, 0.439216, 1)
 shadow_enabled = true
 
 [node name="ship arena" parent="." instance=ExtResource("3_56dn8")]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, -1.75845)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 30.9721, 27.3472, 43.9227)
 
 [node name="rpg_player" parent="." instance=ExtResource("2_wf7x0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.508353, 0.0633433, 15.7018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.8696, 27.9987, 64.091)
 
 [node name="Enemy3D" parent="." instance=ExtResource("3_mu268")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0255873, 2.49098, 6.07611)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.5272, 28.4739, 52.9502)

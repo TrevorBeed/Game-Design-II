@@ -25,6 +25,5 @@ func _physics_process(delta):
 	velocity = velocity.lerp(dir * SPEED, ACCEL * delta)
 	move_and_slide()
 
-func take_damage(dmg, override=false, headshot=false, spawn_origin=null):
-	if override:
-		HEALTH -= dmg
+
+

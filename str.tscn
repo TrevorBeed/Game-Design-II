@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsg4s4xqri0kj"]
+
+[ext_resource type="Script" path="res://Health.gd" id="1_hn58m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fflt"]
+size = Vector3(1.13322, 1.30607, 1)
+
+[node name="STR" type="Node3D"]
+script = ExtResource("1_hn58m")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="choose" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_8fflt")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(1.03834, 1.27409, 1)

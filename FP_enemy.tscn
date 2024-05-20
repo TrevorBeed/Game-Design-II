@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Enemy3D.gd" id="1_5ft64"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6v3wd"]
-radius = 1.55587
-height = 3.18945
+radius = 0.726172
+height = 2.14987
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g328l"]
 
@@ -12,8 +12,8 @@ height = 3.18945
 albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ifrl8"]
-radius = 1.32743
-height = 2.65486
+radius = 1.01864
+height = 2.03728
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_icner"]
 height = 3.28667

@@ -8,3 +8,5 @@ func _on_body_entered(body):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You died!")
 		get_tree().change_scene_to_file("res://fp.tscn")
+	if body.is_in_group("Enemy"):
+		queue_free()

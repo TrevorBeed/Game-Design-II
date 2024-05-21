@@ -121,7 +121,6 @@ func _physics_process(delta):
 	
 	if self.global_position.y <= -50:
 		take_damage(MAX_HEALTH)
-	pass
 
 func update_stamina(amount):
 	STAMINA = clamp(STAMINA + amount, -10, MAX_STAMINA)
@@ -167,6 +166,10 @@ func _on_collision_timer_timeout():
 		if $Sword.overlaps_area(enemy.dmg_area):
 			var dmg = str + 2.5
 			enemy.take_damage(dmg)
+
+#UPGRADES
+func str_upg1():
+	str += 1000
 
 func take_damage(dmg):
 	if damage_lock == 0.0:

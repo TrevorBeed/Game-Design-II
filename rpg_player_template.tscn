@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://rpg_player_template.gd" id="1_xvls4"]
 [ext_resource type="PackedScene" uid="uid://d0bbxfd80pg37" path="res://playerhud_3d.tscn" id="2_ekpf7"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_fbpll"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_688ja"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fbpll"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_lu3be"]
 
@@ -45,13 +45,13 @@ height = 1.34819
 [node name="rpg_player" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_xvls4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08976, 0)
-mesh = SubResource("CapsuleMesh_fbpll")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0636, 0)
 shape = SubResource("CapsuleShape3D_688ja")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08976, 0)
+mesh = SubResource("CapsuleMesh_fbpll")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994522, 0.104528, 0, -0.104528, 0.994522, 0, 1.60664, 0)

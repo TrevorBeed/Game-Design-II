@@ -144,7 +144,7 @@ func update_healthbar():
 	healthbar.force_update_transform()
 
 func do_attack():
-	if attack_lock == 0.0 and $Sword/CollisionTimer.is_stopped() and STAMINA > 0:
+	if attack_lock == 0.0 and $Sword/CollisionTimer.is_stopped() and STAMINA >= 10:
 		update_stamina(-10)
 		# Configure and animate the rotation
 		var tween = get_tree().create_tween()

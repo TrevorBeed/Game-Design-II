@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmvnfvn8l2oh4"]
+[gd_scene load_steps=7 format=3 uid="uid://bmvnfvn8l2oh4"]
 
 [ext_resource type="PackedScene" uid="uid://bpuyk0gwiu3qx" path="res://arena.tscn" id="1_1qewf"]
 [ext_resource type="PackedScene" uid="uid://c1wmo2fagpq0m" path="res://rpg_player_template.tscn" id="2_7jg4s"]
 [ext_resource type="PackedScene" uid="uid://cq2ryo500onwu" path="res://FP_enemy.tscn" id="3_yuabq"]
-[ext_resource type="PackedScene" uid="uid://bsg4s4xqri0kj" path="res://str.tscn" id="4_dgta2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_grhxd"]
 sky_top_color = Color(0.360784, 0.541176, 0.678431, 1)
@@ -36,6 +35,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.702442, 0.514138, 7.80544)
 
 [node name="Enemy" parent="." instance=ExtResource("3_yuabq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37672, 1.67186, -8.28289)
-
-[node name="STR" parent="." instance=ExtResource("4_dgta2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88596, 1.61723, 9.09422)

@@ -21,8 +21,6 @@ var FOV_CHANGE = 1.0
 
 @onready var animator = $gobot/AnimationPlayer
 
-@onready var str = 0
-
 const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
@@ -164,12 +162,8 @@ func _on_collision_timer_timeout():
 	# Check for collisions at each step of the tween animation
 	for enemy in get_tree().get_nodes_in_group("Enemy"):
 		if $Sword.overlaps_area(enemy.dmg_area):
-			var dmg = str + 2.5
+			var dmg = 5
 			enemy.take_damage(dmg)
-
-#UPGRADES
-func str_upg1():
-	str += 1000
 
 func take_damage(dmg):
 	if damage_lock == 0.0:

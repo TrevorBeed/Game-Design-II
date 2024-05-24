@@ -40,6 +40,16 @@ var PUSH_FORCE = 25.0
 var dmg_shader = preload("res://assets/shaders/take_damage.tres")
 @onready var HUD = get_tree().get_first_node_in_group("HUD")
 
+var ySpeed := 0.0
+var dashNum := 0
+var maxDashAmt := 3
+var extraValMulti := 300
+var extraVel := Vector3.ZERO
+
+func dash_forward() -> void:
+	dashNum += 1
+# TUTORIAL FOR DASh https://www.youtube.com/watch?v=b6TLz8adKJ8
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -205,7 +215,4 @@ func _unhandled_input(event):
 		self.rotate_y(-event.relative.x * (CAM_SENSITIVITY / 10.0))
 		camera_arm.rotate_x(-event.relative.y * (CAM_SENSITIVITY / 10.0))
 		camera_arm.rotation.x = clamp(camera_arm.rotation.x, deg_to_rad(-75), deg_to_rad(75))
-		
-
-
 

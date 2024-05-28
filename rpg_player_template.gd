@@ -61,9 +61,11 @@ func _physics_process(delta):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		OS.alert("You Survived!")
 		if "fp" in get_tree().current_scene.name:
-			get_tree().change_scene_to_file("res://fp_3.tscn")
-		else:
 			get_tree().change_scene_to_file("res://fp_2.tscn")
+		if "fp2" in get_tree().current_scene.name:
+			get_tree().change_scene_to_file("res://fp_3.tscn")
+		if "fp3" in get_tree().current_scene.name:
+			get_tree().change_scene_to_file("res://fp_4.tscn")
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

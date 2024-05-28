@@ -35,9 +35,11 @@ func _physics_process(delta):
 	if get_tree().current_scene.name == "fp":
 		dmg = 10
 	if get_tree().current_scene.name == "fp2":
-		dmg = 30
+		dmg = 20
 	if get_tree().current_scene.name == "fp3":
-		dmg = 50
+		dmg = 30
+	if get_tree().current_scene.name == "fp4":
+		dmg = 40
 		
 
 func take_damage(dmg):
